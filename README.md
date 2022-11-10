@@ -3,7 +3,7 @@
 Simple ASCII Image converter made using [OpenCV](https://github.com/opencv/opencv).
 
 ### Issues
-Currently isn't working 100% correctly. At this time, the output files contain the converted ASCII image three times side by side. As shown in the examples below.
+Currently isn't working 100% correctly. At this time, the output files contain the converted ASCII image three times side by side, as shown in the examples below.
 
 <!--
 ### Usage
