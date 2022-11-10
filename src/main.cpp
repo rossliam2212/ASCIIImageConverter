@@ -1,26 +1,15 @@
-#include <iostream>
-#include <string>
-#include <vector>
-#include <array>
-
 #include "ImageToAscii.h"
-
 
 int main(int argc, char** argv) {
 
-//    std::cout << "argc = " << argc << "\n\n";
-//
-//    for (int i = 0; i < argc; ++i) {
-//        std::cout << "argv[" << i << "] = " << argv[i] << std::endl;
-//    }
+    Image i{argv[1]};
 
-
-    Image i{"../images/erin.JPG"};
-    std::cout << i << std::endl;
-//    i.printRowsAndCols();
-
-    ImageToAscii converter{i, 4};
-    converter.convert();
-
+    if (argc >= 3) {
+        ImageToAscii converter{i, std::stoi(argv[2])};
+        converter.convert();
+    } else {
+        ImageToAscii converter{i};
+        converter.convert();
+    }
     return 0;
 }

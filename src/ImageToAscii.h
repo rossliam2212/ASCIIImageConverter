@@ -18,6 +18,7 @@ private:
 
     std::vector<std::vector<char>> asciiRepresentation;
 
+    //    .:-=+*#%@ - http://paulbourke.net/dataformats/asciiart/
     std::array<char, 11> characters {'@', '#', 'S', '%', '?', '*', '+', ';', ':', ',', '.'};
 
 public:
@@ -25,17 +26,13 @@ public:
     void convert();
 
 private:
-    void convertFourPPC();
-    void convertOnePPC();
+    void convertFourPPC(); // Four pixels per character
+    void convertOnePPC(); // One pixel per character
     char convertColorToChar(const cv::Vec3b& pixel);
     char convertColorToChar(std::array<cv::Vec3b, 4> &pixels);
     void getNewFileName();
 
     bool outputToFile();
-
-    void print();
-    void print(const std::vector<std::vector<cv::Vec3b>>& vec);
-    void print(const std::vector<std::array<cv::Vec3b, 4>>& vec);
 };
 
 

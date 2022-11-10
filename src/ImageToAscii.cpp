@@ -46,7 +46,9 @@ void ImageToAscii::convertOnePPC() {
     }
     asciiRepresentation.shrink_to_fit();
 
-    outputToFile();
+    if (outputToFile()) {
+        std::cout << "\nImages converted Successfully!\n";
+    }
 }
 
 void ImageToAscii::convertFourPPC() {
@@ -106,8 +108,9 @@ void ImageToAscii::convertFourPPC() {
         }
     }
     asciiRepresentation.shrink_to_fit();
-    outputToFile();
-
+    if (outputToFile()) {
+        std::cout << "\nImages converted Successfully!\n\n";
+    }
 }
 
 char ImageToAscii::convertColorToChar(const cv::Vec3b& pixel) {
@@ -170,7 +173,7 @@ void ImageToAscii::getNewFileName() {
 }
 
 bool ImageToAscii::outputToFile() {
-    std::string prefix{"../ConvertedASCIIImages/"};
+    std::string prefix{"../convertedImages/"};
     std::string extension{".txt"};
     std::string outputFileName{prefix + newFileName + extension};
 
@@ -191,40 +194,3 @@ bool ImageToAscii::outputToFile() {
     outputFile.close();
     return true;
 }
-
-
-
-// ========== For Testing ==========
-void ImageToAscii::print() {
-    std::cout << "\n\n";
-
-    for (const auto& row : asciiRepresentation) {
-        for (const auto& c : row)
-            std::cout << c << " ";
-        std::cout << "\n";
-    }
-}
-
-void ImageToAscii::print(const std::vector<std::vector<cv::Vec3b>> &vec) {
-    std::cout << "\n\n";
-
-    for (const auto& i : vec) {
-        for (const auto& j : i) {
-            std::cout << j << " ";
-         }
-        std::cout << "\n";
-    }
-}
-
-void ImageToAscii::print(const std::vector<std::array<cv::Vec3b, 4>>& vec) {
-    std::cout << "\n\n";
-
-    for (const auto& i : vec) {
-        for (const auto& j : i) {
-            std::cout << j << " ";
-        }
-        std::cout << "\n";
-    }
-}
-
-
