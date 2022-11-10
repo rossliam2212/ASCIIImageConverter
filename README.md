@@ -5,13 +5,14 @@ Simple ASCII Image converter made using [OpenCV](https://github.com/opencv/openc
 ### Issues
 Currently isn't working 100% correctly. At this time, the output files contain the converted ASCII image three times side by side. As shown in the examples below.
 
-<!--
 ### Usage
 ```bat
-./ASCIIArtGenerator [imageLocation] [PixelsPerCharacter]
+./ASCIIArtGenerator [imageLocation] [outputFileLocation] [PixelsPerCharacter]
 ```
-Pixels Per Character should either be 1 or 4 (1 if left out).
--->
+
+The pixels per character flag should either be set to 1 or 4, as they are the two options.
+If left out, it will be set to 1 by default.
+
 
 ## Examples:
 

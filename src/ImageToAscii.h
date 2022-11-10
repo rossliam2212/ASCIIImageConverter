@@ -15,6 +15,7 @@ private:
     Image image;
     int pixelsPerCharacter;
     std::string newFileName;
+    std::string outputLocation;
 
     std::vector<std::vector<char>> asciiRepresentation;
 
@@ -22,7 +23,7 @@ private:
     std::array<char, 11> characters {'@', '#', 'S', '%', '?', '*', '+', ';', ':', ',', '.'};
 
 public:
-    explicit ImageToAscii(Image& image, int pixelsPerCharacter = 1);
+    ImageToAscii(Image& image, const std::string& outPutLocation, int pixelsPerCharacter = 1);
     void convert();
 
 private:

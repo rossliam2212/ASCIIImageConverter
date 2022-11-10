@@ -4,8 +4,9 @@
 
 #include "ImageToAscii.h"
 
-ImageToAscii::ImageToAscii(Image& image, int pixelsPerCharacter)
+ImageToAscii::ImageToAscii(Image& image, const std::string& outputLocation, int pixelsPerCharacter)
     : image{image},
+      outputLocation{outputLocation},
       pixelsPerCharacter{pixelsPerCharacter},
       newFileName{} { }
 
@@ -173,9 +174,9 @@ void ImageToAscii::getNewFileName() {
 }
 
 bool ImageToAscii::outputToFile() {
-    std::string prefix{"../convertedImages/"};
-    std::string extension{".txt"};
-    std::string outputFileName{prefix + newFileName + extension};
+//    std::string prefix{"../convertedImages/"};
+//    std::string extension{".txt"};
+    std::string outputFileName{outputLocation + newFileName + ".txt"};
 
     std::ofstream outputFile{outputFileName};
 
