@@ -7,12 +7,15 @@ Currently isn't working 100% correctly. At this time, the output files contain t
 
 ### Usage
 ```bat
-./ASCIIArtGenerator [imageLocation] [outputFileLocation] [PixelsPerCharacter]
+./ASCIIArtGenerator [imageLocation] [outputFileLocation] [pixelsPerCharacter]
 ```
 
-The pixels per character flag should either be set to 1 or 4, as they are the two options.
-If left out, it will be set to 1 by default.
+**Image Location** - The location of the image on your computer.
 
+**Output File Location** - The location you want to save the outputted .txt file.
+
+**Pixels Per Character** - The number of pixels per character. This value should either be set to 1 or 4, as they are the two options.
+If left out, it will be set to 1 by default.
 
 ## Examples:
 
